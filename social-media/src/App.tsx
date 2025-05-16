@@ -1,15 +1,21 @@
 
 import { Routes, Route } from 'react-router'
-import Home from './pages/Home'
+import { Navbar } from './components/NavBar'
+import { Home } from './pages/Home'
+
+import CreatePostPage from './pages/CreatePostPage'
+import { PostPage } from './pages/PostPage'
 
 function App() {
 
   return (
-    <div>
-      <div>
+    <div className="min-h-screen bg-black text-gray-100 transition-opacity duration-700 pt-20">
+      <div className="container mx-auto px-4 py-6">
+        <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />
-
+          <Route path='/create' element={<CreatePostPage />} />
+          <Route path='/post/:id' element={<PostPage />} />
         </Routes>
       </div>
     </div>
