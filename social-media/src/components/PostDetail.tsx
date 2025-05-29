@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query"
 import type { Post } from "./PostList"
 import { supabase } from "../supabase-client"
 import { LikeButton } from "./LikeButton"
+import CommentSection from "./CommentSection"
 
 interface Props {
     postId: number
@@ -41,7 +42,7 @@ export default function PostDetail({ postId }: Props) {
             </p>
 
             <LikeButton postId={postId} />
-            {/* <CommentSection postId={postId} /> */}
+            <CommentSection postId={postId} />
         </div>
     );
 }
